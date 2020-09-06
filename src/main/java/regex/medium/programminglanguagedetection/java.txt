@@ -1,0 +1,288 @@
+/*
+        Calculate Circle Area using Java Example
+        This Calculate Circle Area using Java Example shows how to calculate
+        area of circle using it's radius.
+*/
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class CalculateCircleAreaExample {
+
+        public static void main(String[] args) {
+
+                int radius = 0;
+                System.out.println("Please enter radius of a circle");
+
+                try
+                {
+                        //get the radius from console
+                        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                        radius = Integer.parseInt(br.readLine());
+                }
+                //if invalid value was entered
+                catch(NumberFormatException ne)
+                {
+                        System.out.println("Invalid radius value" + ne);
+                        System.exit(0);
+                }
+                catch(IOException ioe)
+                {
+                        System.out.println("IO Error :" + ioe);
+                        System.exit(0);
+                }
+
+                /*
+                 * Area of a circle is
+                 * pi * r * r
+                 * where r is a radius of a circle.
+                 */
+
+                //NOTE : use Math.PI constant to get value of pi
+                double area = Math.PI * radius * radius;
+
+                System.out.println("Area of a circle is " + area);
+        }
+}
+
+/*
+Output of Calculate Circle Area using Java Example would be
+Please enter radius of a circle
+19
+Area of a circle is 1134.1149479459152
+*/
+
+@@@@
+
+/*
+        Calculate Rectangle Area using Java Example
+        This Calculate Rectangle Area using Java Example shows how to calculate
+        area of Rectangle using it's length and width.
+*/
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class CalculateRectArea {
+
+        public static void main(String[] args) {
+
+                int width = 0;
+                int length = 0;
+
+                try
+                {
+                        //read the length from console
+                        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+                        System.out.println("Please enter length of a rectangle");
+                        length = Integer.parseInt(br.readLine());
+
+                        //read the width from console
+                        System.out.println("Please enter width of a rectangle");
+                        width = Integer.parseInt(br.readLine());
+
+
+                }
+                //if invalid value was entered
+                catch(NumberFormatException ne)
+                {
+                        System.out.println("Invalid value" + ne);
+                        System.exit(0);
+                }
+                catch(IOException ioe)
+                {
+                        System.out.println("IO Error :" + ioe);
+                        System.exit(0);
+                }
+
+                /*
+                 * Area of a rectangle is
+                 * length * width
+                */
+
+                int area = length * width;
+
+                System.out.println("Area of a rectangle is " + area);
+        }
+
+}
+
+/*
+Output of Calculate Rectangle Area using Java Example would be
+Please enter length of a rectangle
+10
+Please enter width of a rectangle
+15
+Area of a rectangle is 150
+*/
+
+@@@@
+
+/*
+        Java Factorial Using Recursion Example
+        This Java example shows how to generate factorial of a given number
+        using recursive function.
+*/
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class JavaFactorialUsingRecursion {
+
+        public static void main(String args[]) throws NumberFormatException, IOException{
+
+                System.out.println("Enter the number: ");
+
+                //get input from the user
+                BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+                int a = Integer.parseInt(br.readLine());
+
+                //call the recursive function to generate factorial
+                int result= fact(a);
+
+
+                System.out.println("Factorial of the number is: " + result);
+        }
+
+        static int fact(int b)
+        {
+                if(b <= 1)
+                        //if the number is 1 then return 1
+                        return 1;
+                else
+                        //else call the same function with the value - 1
+                        return b * fact(b-1);
+        }
+}
+
+/*
+Output of this Java example would be
+
+Enter the number:
+5
+Factorial of the number is: 120
+*/
+
+@@@@
+
+/*
+        Swap Numbers Without Using Third Variable Java Example
+        This Swap Numbers Java Example shows how to
+        swap value of two numbers without using third variable using java.
+*/
+
+public class SwapElementsWithoutThirdVariableExample {
+
+        public static void main(String[] args) {
+
+                int num1 = 10;
+                int num2 = 20;
+
+                System.out.println("Before Swapping");
+                System.out.println("Value of num1 is :" + num1);
+                System.out.println("Value of num2 is :" +num2);
+
+                //add both the numbers and assign it to first
+                num1 = num1 + num2;
+                num2 = num1 - num2;
+                num1 = num1 - num2;
+
+                System.out.println("Before Swapping");
+                System.out.println("Value of num1 is :" + num1);
+                System.out.println("Value of num2 is :" +num2);
+        }
+
+
+}
+
+/*
+Output of Swap Numbers Without Using Third Variable example would be
+Before Swapping
+Value of num1 is :10
+Value of num2 is :20
+Before Swapping
+Value of num1 is :20
+Value of num2 is :10
+*/
+
+@@@@
+
+// OddEven.java
+import javax.swing.JOptionPane;
+
+public class OddEven {
+    /**
+     * "input" is the number that the user gives to the computer
+     */
+    private int input; // a whole number("int" means integer)
+
+    /**
+     * This is the constructor method. It gets called when an object of the OddEven type
+     * is being created.
+     */
+    public OddEven() {
+        /*
+         * In most Java programs constructors can initialize objects with default values, or create
+         * other objects that this object might use to perform its functions. In some Java programs, the
+         * constructor may simply be an empty function if nothing needs to be initialized prior to the
+         * functioning of the object. In this program's case, an empty constructor would suffice.
+         * A constructor must exist; however, if the user doesn't put one in then the compiler
+         * will create an empty one.
+         */
+    }
+
+    /**
+     * This is the main method. It gets called when this class is run through a Java interpreter.
+     * @param args command line arguments (unused)
+     */
+    public static void main(final String[] args) {
+       /*
+        * This line of code creates a new instance of this class called "number" (also known as an
+        * Object) and initializes it by calling the constructor. The next line of code calls
+        * the "showDialog()" method, which brings up a prompt to ask you for a number
+        */
+       OddEven number = new OddEven();
+       number.showDialog();
+    }
+
+    public void showDialog() {
+        /*
+         * "try" makes sure nothing goes wrong. If something does,
+         * the interpreter skips to "catch" to see what it should do.
+         */
+        try {
+            /*
+             * The code below brings up a JOptionPane, which is a dialog box
+             * The String returned by the "showInputDialog()" method is converted into
+             * an integer, making the program treat it as a number instead of a word.
+             * After that, this method calls a second method, calculate() that will
+             * display either "Even" or "Odd."
+             */
+            this.input = Integer.parseInt(JOptionPane.showInputDialog("Please enter a number."));
+            this.calculate();
+        } catch (final NumberFormatException e) {
+            /*
+             * Getting in the catch block means that there was a problem with the format of
+             * the number. Probably some letters were typed in instead of a number.
+             */
+            System.err.println("ERROR: Invalid input. Please type in a numerical value.");
+        }
+    }
+
+    /**
+     * When this gets called, it sends a message to the interpreter.
+     * The interpreter usually shows it on the command prompt (For Windows users)
+     * or the terminal (For *nix users).(Assuming it's open)
+     */
+    private void calculate() {
+        if ((this.input % 2) == 0) {
+            JOptionPane.showMessageDialog(null, "Even");
+        } else {
+            JOptionPane.showMessageDialog(null, "Odd");
+        }
+    }
+}
