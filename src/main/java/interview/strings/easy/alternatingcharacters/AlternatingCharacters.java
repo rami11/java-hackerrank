@@ -11,4 +11,24 @@ public class AlternatingCharacters {
         }
         return count;
     }
+
+    public static int alternatingCharacters2(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        char[] chars = s.toCharArray();
+        char prev = chars[0];
+
+        int count = 0;
+        for (int i = 1; i < chars.length; i++) {
+            char curr = chars[i];
+            if (curr == prev) {
+                count++;
+            }
+            prev = curr;
+        }
+
+        return count;
+    }
 }
