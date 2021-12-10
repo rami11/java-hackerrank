@@ -46,6 +46,5 @@ public class MinMaxSum {
         }
 
         System.out.printf("%d %d%n", sumMin, sumMax);
-
-
     }
+}
