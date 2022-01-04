@@ -1,10 +1,10 @@
 package interview.prep.week3.reversealinkedlist;
 
-public class Node<T> {
+public class SinglyListNode<T> {
     public T data;
-    public Node<T> next;
+    public SinglyListNode<T> next;
 
-    public Node(T data) {
+    public SinglyListNode(T data) {
         this.data = data;
     }
 }

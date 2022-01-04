@@ -6,21 +6,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Node<Character> head = generateDoublyLinkedList(List.of('X', 'Y', 'Z'));
+        DoublyListNode<Character> head = generateDoublyLinkedList(List.of('X', 'Y', 'Z'));
         displayLinkedList(head);
     }
 
-    public static <T> Node<T> reverse(Node<T> head) {
+    public static <T> DoublyListNode<T> reverse(DoublyListNode<T> head) {
 
-        if (head == null) {
-            return null;
+        if (head == null || head.next == null) {
+            return head;
         }
 
-        Node<T> prev = null;
-        Node<T> curr = head;
+        DoublyListNode<T> prev = null;
+        DoublyListNode<T> curr = head;
 
         while (curr != null) {
-            Node<T> temp = curr.next;
+            DoublyListNode<T> temp = curr.next;
             curr.next = prev;
             curr.prev = temp;
 
@@ -32,12 +32,12 @@ public class Main {
     }
 
     // x y
-    private static <T> Node<T> generateDoublyLinkedList(List<T> elements) {
-        Node<T> head = null;
-        Node<T> tail = head;
+    private static <T> DoublyListNode<T> generateDoublyLinkedList(List<T> elements) {
+        DoublyListNode<T> head = null;
+        DoublyListNode<T> tail = head;
         for (T element : elements) {
 
-            Node<T> node = new Node<>(element);
+            DoublyListNode<T> node = new DoublyListNode<>(element);
 
             if (head == null) {
                 head = node;
@@ -51,8 +51,8 @@ public class Main {
         return head;
     }
 
-    private static <T> void displayLinkedList(Node<T> head) {
-        Node<T> curr = head;
+    private static <T> void displayLinkedList(DoublyListNode<T> head) {
+        DoublyListNode<T> curr = head;
         while (curr.next != null) {
             System.out.printf("%s <-> ", curr.data);
             curr = curr.next;

@@ -5,36 +5,36 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Node<String> head = generateLinkedList(List.of("A", "C", "D"));
+        SinglyListNode<String> head = generateLinkedList(List.of("A", "C", "D"));
         displayLinkedList(head);
 
-        Node<String> reversed = reverseLinkedList(head);
+        SinglyListNode<String> reversed = reverseLinkedList(head);
         displayLinkedList(reversed);
         //---
 
         System.out.println();
 
         //--
-        Node<Integer> head2 = generateLinkedList(List.of(1, 5, 1, 2, 3, 4, 5));
+        SinglyListNode<Integer> head2 = generateLinkedList(List.of(1, 5, 1, 2, 3, 4, 5));
         displayLinkedList(head2);
 
-        Node<Integer> reversed2 = reverseLinkedList(head2);
+        SinglyListNode<Integer> reversed2 = reverseLinkedList(head2);
         displayLinkedList(reversed2);
     }
 
     // x -> y -> z
-    private static <T> Node<T> reverseLinkedList(Node<T> head) {
+    private static <T> SinglyListNode<T> reverseLinkedList(SinglyListNode<T> head) {
 
-        if (head == null) {
-            return null;
+        if (head == null || head.next == null) {
+            return head;
         }
 
-        Node<T> prev = null;
-        Node<T> curr = head;
+        SinglyListNode<T> prev = null;
+        SinglyListNode<T> curr = head;
 
         while (curr != null) {
 
-            Node<T> temp = curr.next;
+            SinglyListNode<T> temp = curr.next;
             curr.next = prev;
 
             prev = curr;
@@ -44,12 +44,12 @@ public class Main {
         return prev;
     }
 
-    private static <T> Node<T> generateLinkedList(List<T> elements) {
-        Node<T> head = null;
-        Node<T> tail = head;
+    private static <T> SinglyListNode<T> generateLinkedList(List<T> elements) {
+        SinglyListNode<T> head = null;
+        SinglyListNode<T> tail = head;
         for (T element : elements) {
 
-            Node<T> node = new Node<>(element);
+            SinglyListNode<T> node = new SinglyListNode<>(element);
 
             if (head == null) {
                 head = node;
@@ -62,8 +62,8 @@ public class Main {
         return head;
     }
 
-    private static <T> void displayLinkedList(Node<T> head) {
-        Node<T> curr = head;
+    private static <T> void displayLinkedList(SinglyListNode<T> head) {
+        SinglyListNode<T> curr = head;
         while (curr.next != null) {
             System.out.printf("%s -> ", curr.data);
             curr = curr.next;
