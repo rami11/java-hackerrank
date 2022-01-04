@@ -15,11 +15,21 @@ public class Main {
         System.out.println();
 
         //--
-        SinglyListNode<Integer> head2 = generateLinkedList(List.of(1, 5, 1, 2, 3, 4, 5));
+        SinglyListNode<Integer> head2 = generateLinkedList(List.of(1, 2, 3));
         displayLinkedList(head2);
 
-        SinglyListNode<Integer> reversed2 = reverseLinkedList(head2);
+        SinglyListNode<Integer> reversed2 = reverseLinkedListRec(head2);
         displayLinkedList(reversed2);
+    }
+
+    private static <T> SinglyListNode<T> reverseLinkedListRec(SinglyListNode<T> head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        SinglyListNode<T> prev = reverseLinkedListRec(head.next);
+        head.next.next = head;
+        head.next = null;
+        return prev;
     }
 
     // x -> y -> z
