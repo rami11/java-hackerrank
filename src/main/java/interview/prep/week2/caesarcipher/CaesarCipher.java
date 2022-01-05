@@ -1,4 +1,4 @@
-package interview.prep.week3.caesarcipher;
+package interview.prep.week2.caesarcipher;
 
 public class CaesarCipher {
 
